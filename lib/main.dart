@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(title: const Text("SLA CONNECT")),
       body: Container(
-        color: const Color.fromARGB(255, 9, 22, 66), // Fundo azul aqui
+        color: const Color.fromARGB(255, 9, 22, 65), // Fundo azul aqui
         padding: const EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
