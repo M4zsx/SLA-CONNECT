@@ -33,15 +33,15 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Meu Primeiro App")),
+      appBar: AppBar(title: Text("SLA CONNECT")),
       body: Container(
-        color: const Color.fromARGB(255, 8, 20, 59), // Fundo azul aqui
+        color: const Color.fromARGB(255, 9, 22, 66), // Fundo azul aqui
         padding: EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset("assets/images/logo_slaconnect.png", height: 100),
-            SizedBox(height: 20),
+            Image.asset("assets/images/logo_slaconnect.png", height: 350),
+            SizedBox(height: 60),
             Text(
               mensagem,
               style: TextStyle(fontSize: 24, color: Colors.white), // Texto branco para contraste
@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: mudarMensagem,
-              child: Text("Clique aqui"),
+              child: Text("Cadastrar-se"),
             ),
             SizedBox(height: 40),
             Row(
