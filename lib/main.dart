@@ -4,83 +4,62 @@ void main() {
   runApp(MyApp());
 }
 
+// Widget raiz
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'SLA Connect',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: LoginPage(),
+      title: 'Exemplo Flutter',
+      home: HomeScreen(),
     );
   }
 }
 
-class LoginPage extends StatefulWidget {
+// StatefulWidget: permite mudar o estado (texto)
+class HomeScreen extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  // Controllers para os campos de texto
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  // Função de validação simples
-  void _login() {
-    String email = _emailController.text;
-    String password = _passwordController.text;
-    if (email.isEmpty || password.isEmpty) {
-      // Exibe um alerta se algum campo estiver vazio
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Por favor, preencha todos os campos.')),
-      );
-    } else {
-      // Aqui você pode fazer a lógica de login, como enviar os dados para um servidor
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text('Login bem-sucedido!')));
-      // Limpa os campos após o login bem-sucedido
-      _emailController.clear();
-      _passwordController.clear();
-    }
+class _HomeScreenState extends State<HomeScreen> {
+  String mensagem = "Olá, Flutter!";
+
+  void mudarMensagem() {
+    setState(() {
+      mensagem = "Você clicou no botão!";
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('SLA CONNECT')),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      appBar: AppBar(title: Text("Meu Primeiro App")),
+      body: Container(
+        color: const Color.fromARGB(255, 8, 20, 59), // Fundo azul aqui
+        padding: EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            // Campo de e-mail
-            TextField(
-              controller: _emailController,
-              decoration: InputDecoration(
-                labelText: 'RM',
-                border: OutlineInputBorder(),
-              ),
-              keyboardType: TextInputType.emailAddress,
-            ),
-            SizedBox(height: 16),
-            // Campo de senha
-            TextField(
-              controller: _passwordController,
-              obscureText: true, // Torna o texto da senha oculto
-              decoration: InputDecoration(
-                labelText: 'Senha',
-                border: OutlineInputBorder(),
-              ),
+          children: [
+            Image.asset("assets/images/logo_slaconnect.png", height: 100),
+            SizedBox(height: 20),
+            Text(
+              mensagem,
+              style: TextStyle(fontSize: 24, color: Colors.white), // Texto branco para contraste
             ),
             SizedBox(height: 20),
-            // Botão de login
             ElevatedButton(
-              onPressed: _login,
-              child: Text('Login'),
-              style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-              ),
+              onPressed: mudarMensagem,
+              child: Text("Clique aqui"),
             ),
+            SizedBox(height: 40),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.thumb_up, color: Colors.red),
+                SizedBox(width: 10),
+                Text("Curta e compartilhe!", style: TextStyle(fontSize: 16, color: Colors.white)),
+              ],
+            )
           ],
         ),
       ),
