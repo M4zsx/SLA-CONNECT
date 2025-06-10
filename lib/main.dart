@@ -42,6 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Image.asset("assets/images/logo_slaconnect.png", height: 350),
             SizedBox(height: 60),
+            
             Text(
               mensagem,
               style: TextStyle(fontSize: 24, color: Colors.white), // Texto branco para contraste
@@ -54,11 +55,6 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(height: 40),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.thumb_up, color: Colors.red),
-                SizedBox(width: 10),
-                Text("Curta e compartilhe!", style: TextStyle(fontSize: 16, color: Colors.white)),
-              ],
             )
           ],
         ),
