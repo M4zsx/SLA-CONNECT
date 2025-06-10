@@ -1,6 +1,4 @@
 
-/*
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -60,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
             TextField(
               controller: _emailController,
               decoration: InputDecoration(
-                labelText: 'RM',
+                labelText: 'Digite o RM do usuário...',
                 border: OutlineInputBorder(),
               ),
               keyboardType: TextInputType.emailAddress,
@@ -71,7 +69,7 @@ class _LoginPageState extends State<LoginPage> {
               controller: _passwordController,
               obscureText: true, // Torna o texto da senha oculto
               decoration: InputDecoration(
-                labelText: 'Senha',
+                labelText: 'Digite sua senha...',
                 border: OutlineInputBorder(),
               ),
             ),
@@ -90,4 +88,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-*/
